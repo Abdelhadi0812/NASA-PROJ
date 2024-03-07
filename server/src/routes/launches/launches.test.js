@@ -12,11 +12,11 @@ describe('Launches API', () => {
         await mongoConnect();
         await loadPlanetsData();
         await loadLaunchData();
-    });
+    }, 10000);
 
     afterAll(async () =>{
         await mongoDisconnect();
-    });
+    }, 10000);
 
     describe('Test GET /launches', ()=>{
         test('It should respond with 200 success', async ()=>{
